@@ -245,13 +245,6 @@ table.res td,table.res th{white-space:nowrap}
   <p>Para Sabará e para as cidades por onde passam os rios antes de chegar aqui, com a chuva prevista em milímetros. Previsão é estimativa e erra, principalmente nas tempestades de verão, que são muito localizadas.</p>
 </section>
 <p class="avisoc" role="note"><b>Não é uma ferramenta oficial.</b> Em caso de risco, siga a Defesa Civil: <b>199</b> · Bombeiros: <b>193</b>.</p>
-<section class="oficialP" aria-labelledby="ofT">
-  <div class="k">Fonte oficial · INMET</div>
-  <h2 id="ofT">Alertas para Sabará</h2>
-  <div id="avisosI"><p class="muted" style="margin:0">Carregando os alertas do INMET…</p></div>
-  <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://portal.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
-</section>
-
 <section class="card" aria-labelledby="cidI">
   <div class="kI">Previsão oficial · INMET</div>
   <h2 id="cidI">Sabará</h2>
@@ -260,6 +253,14 @@ table.res td,table.res th{white-space:nowrap}
   <div class="prevI" id="prevB"></div>
   <p class="muted" style="font-size:14px;margin:0">Chuva forte em Caeté pesa mais no Rio Sabará. Chuva forte rio acima (Itabirito, Nova Lima, Rio Acima e Raposos) pesa mais no Rio das Velhas.</p>
 </section>
+<section class="oficialP" aria-labelledby="ofT">
+  <div class="k">Fonte oficial · INMET</div>
+  <h2 id="ofT">Alerta do INMET para Sabará</h2>
+  <div id="avisosI"><p class="muted" style="margin:0">Carregando os alertas do INMET…</p></div>
+  <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://portal.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
+</section>
+
+
 
 <p class="fonteP" style="--c:var(--accent)"><b>Chuva em milímetros:</b> o INMET não informa a quantidade de chuva prevista. Por isso, os números abaixo vêm do <a href="https://open-meteo.com/">Open-Meteo</a>, um serviço gratuito que combina vários modelos do tempo. É um complemento: por ser estimativa automática, pode ser diferente da previsão oficial acima.</p>
 
@@ -331,9 +332,11 @@ async function inmet(){
   try{
     const [av,pv]=await Promise.all([sbGet('inmet_avisos_ativos?select=*'),sbGet('inmet_previsao?select=cidade,dia,periodo,ordem,resumo,temp_max,temp_min,int_vento,atualizado_em&order=dia.asc,ordem.asc')]);
     prev=pv;
-    A.innerHTML=av.length?av.map(a=>{const [c,n]=SEVI[a.severidade]||['--s1',''];
+    const ag=Date.now(),RK={'Grande Perigo':3,'Perigo':2,'Perigo Potencial':1};
+    const ativos=av.filter(a=>new Date(a.inicio)<=ag),um=(ativos.length?ativos:av).slice().sort((x,y)=>(RK[y.severidade]||0)-(RK[x.severidade]||0)||new Date(x.inicio)-new Date(y.inicio)).slice(0,1);
+    A.innerHTML=um.length?um.map(a=>{const [c,n]=SEVI[a.severidade]||['--s1',''];
       return `<div class="avI" style="--c:${css(c)}"><b class="t">Alerta de ${esc((a.evento||'').toLowerCase())}${n?' ('+n+')':''} · ${esc(a.severidade)}</b>
-      <span>${esc(a.riscos)}</span>${a.instrucoes?`<small>${esc(a.instrucoes)}</small>`:''}<small>Válido de ${hBR(a.inicio)} até ${hBR(a.fim)}</small></div>`;}).join('')
+      <span>${esc(a.riscos)}</span>${a.instrucoes?`<small>${esc(a.instrucoes)}</small>`:''}<small>${new Date(a.inicio)>ag?'Começa em '+hBR(a.inicio)+' e vale até ':'Válido até '}${hBR(a.fim)}</small></div>`;}).join('')
       :'<p style="margin:0"><b>Nenhum alerta do INMET para Sabará agora.</b></p>';
         bacia();
     const u=pv.map(x=>x.atualizado_em).filter(Boolean).sort().at(-1);
