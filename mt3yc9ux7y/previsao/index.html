@@ -203,14 +203,14 @@ footer .lai{border-left-color:var(--goldb)}
 .hr .pc{font-size:12px;color:var(--muted)}
 .hr .mmv{font-size:12px;font-weight:700;color:var(--chuva);min-height:16px}
 .dias{display:grid;gap:0}
-.dia{display:grid;grid-template-columns:minmax(92px,1.2fr) 34px minmax(0,2fr) 92px 104px;gap:10px;align-items:center;padding:11px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.dia{display:grid;grid-template-columns:minmax(92px,1fr) 92px 104px;gap:10px;align-items:center;padding:11px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
 .dia:first-child{border-top:0}
 .dia .n{font-weight:700}.dia .n small{display:block;font-weight:400;color:var(--muted);font-size:13px}
 .dia .i{font-size:24px}
 .dia .c{color:var(--muted);font-size:14px;min-width:0}
 .dia .tt{text-align:right;white-space:nowrap}.dia .tt b{font-size:17px}.dia .tt span{color:var(--muted)}
 .dia .ch{text-align:right;color:var(--chuva);font-weight:700;white-space:nowrap}.dia .ch small{display:block;font-weight:400;color:var(--muted);font-size:12px}
-@media (max-width:560px){.dia{grid-template-columns:minmax(64px,1fr) 28px 72px 88px}.dia .c{display:none}}
+@media (max-width:560px){.dia{grid-template-columns:minmax(64px,1fr) 72px 88px}}
 .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin:0;padding:0;list-style:none}
 .leg i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--chuva);margin-right:6px;vertical-align:-1px}
 table.res td,table.res th{white-space:nowrap}
@@ -338,15 +338,15 @@ function cidade(){
   const di=d.daily;
   const hs0=horas(d),hj0=hojeStr(),ha0=horaAgora();
   const s24=hs0.filter(h=>(h.dia===hj0&&h.h>=ha0)||h.dia>hj0).slice(0,24).reduce((a,h)=>a+h.p,0);
-  document.getElementById('agoraP').innerHTML=`<span class="t">${fmt(cur.temperature_2m)}°</span><span class="d"><b>${ICO(cur.weather_code)} ${WMO[cur.weather_code]||''}</b><br>Hoje: máxima ${fmt(di.temperature_2m_max[0])}°, mínima ${fmt(di.temperature_2m_min[0])}° <br>Chuva nas próximas 24 h: <b>${faixa(s24)}</b> · chance hoje ${fmt(di.precipitation_probability_max[0])}%<br>Umidade agora (estimativa): ${fmt(cur.relative_humidity_2m)}%</span>`;
+  document.getElementById('agoraP').innerHTML=`<span class="t">${fmt(cur.temperature_2m)}°</span><span class="d"><b>Estimativa em números (Open-Meteo)</b><br>Hoje: máxima ${fmt(di.temperature_2m_max[0])}°, mínima ${fmt(di.temperature_2m_min[0])}° <br>Chuva nas próximas 24 h: <b>${faixa(s24)}</b> · chance hoje ${fmt(di.precipitation_probability_max[0])}%<br>Umidade agora (estimativa): ${fmt(cur.relative_humidity_2m)}%</span>`;
   const hs=horas(d),hj=hojeStr(),am=amanhaStr(),ha=horaAgora();
-  const cel=h=>`<div class="hr${h.p>=1?' mm':''}" title="${h.h}h: ${WMO[h.c]||''}, ${fmt(h.tp)}°, ${h.pr}% de chance, ${fmt(h.p,1)} mm"><span class="h">${h.h}h</span><span class="i">${ICO(h.c)}</span><span class="tp">${fmt(h.tp)}°</span><span class="pb"><i style="height:${Math.max(0,h.pr)}%"></i></span><span class="pc">${h.pr}%</span><span class="mmv">${h.p>=0.1?fmt(h.p,1):''}</span></div>`;
+  const cel=h=>`<div class="hr${h.p>=1?' mm':''}" title="${h.h}h: ${fmt(h.tp)}°, ${h.pr}% de chance, ${fmt(h.p,1)} mm"><span class="h">${h.h}h</span><span class="tp">${fmt(h.tp)}°</span><span class="pb"><i style="height:${Math.max(0,h.pr)}%"></i></span><span class="pc">${h.pr}%</span><span class="mmv">${h.p>=0.1?fmt(h.p,1):''}</span></div>`;
   const H=hs.filter(h=>h.dia===hj&&h.h>=ha);
   document.getElementById('hoje').innerHTML=H.length?H.map(cel).join(''):'<p class="muted">O dia de hoje já terminou.</p>';
   document.getElementById('amanha').innerHTML=hs.filter(h=>h.dia===am).map(cel).join('');
   document.getElementById('dias').innerHTML=di.time.slice(0,8).map((t,i)=>{const dt=new Date(t+'T12:00:00-03:00');
     const nome=i===0?'Hoje':i===1?'Amanhã':DIAS[dt.getUTCDay()].replace(/^./,c=>c.toUpperCase());
-    return `<div class="dia"><span class="n">${nome}<small>${t.slice(8,10)}/${t.slice(5,7)}</small></span><span class="i">${ICO(di.weather_code[i])}</span><span class="c">${WMO[di.weather_code[i]]||''}</span><span class="tt"><b>${fmt(di.temperature_2m_max[i])}°</b> <span>${fmt(di.temperature_2m_min[i])}°</span></span><span class="ch">${faixa(di.precipitation_sum[i])}<small>${fmt(di.precipitation_probability_max[i])}%</small></span></div>`;}).join('');
+    return `<div class="dia"><span class="n">${nome}<small>${t.slice(8,10)}/${t.slice(5,7)}</small></span><span class="tt"><b>${fmt(di.temperature_2m_max[i])}°</b> <span>${fmt(di.temperature_2m_min[i])}°</span></span><span class="ch">${faixa(di.precipitation_sum[i])}<small>${fmt(di.precipitation_probability_max[i])}%</small></span></div>`;}).join('');
 }
 carregar();setInterval(carregar,30*60e3);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&dados)carregar();});
