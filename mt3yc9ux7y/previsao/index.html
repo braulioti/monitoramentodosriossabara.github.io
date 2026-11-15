@@ -203,14 +203,14 @@ footer .lai{border-left-color:var(--goldb)}
 .hr .pc{font-size:12px;color:var(--muted)}
 .hr .mmv{font-size:12px;font-weight:700;color:var(--chuva);min-height:16px}
 .dias{display:grid;gap:0}
-.dia{display:grid;grid-template-columns:minmax(92px,1fr) 92px 104px;gap:10px;align-items:center;padding:11px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.dia{display:grid;grid-template-columns:minmax(92px,1fr) auto;gap:10px;align-items:center;padding:11px 2px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
 .dia:first-child{border-top:0}
 .dia .n{font-weight:700}.dia .n small{display:block;font-weight:400;color:var(--muted);font-size:13px}
 .dia .i{font-size:24px}
 .dia .c{color:var(--muted);font-size:14px;min-width:0}
 .dia .tt{text-align:right;white-space:nowrap}.dia .tt b{font-size:17px}.dia .tt span{color:var(--muted)}
 .dia .ch{text-align:right;color:var(--chuva);font-weight:700;white-space:nowrap}.dia .ch small{display:block;font-weight:400;color:var(--muted);font-size:12px}
-@media (max-width:560px){.dia{grid-template-columns:minmax(64px,1fr) 72px 88px}}
+@media (max-width:560px){.dia{grid-template-columns:minmax(64px,1fr) auto}}
 .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin:0;padding:0;list-style:none}
 .leg i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--chuva);margin-right:6px;vertical-align:-1px}
 table.res td,table.res th{white-space:nowrap}
@@ -235,7 +235,7 @@ table.res td,table.res th{white-space:nowrap}
 <section class="hero" style="--c:var(--accent)">
   <div class="k">Previsão do tempo</div>
   <h1>Previsão oficial do INMET para Sabará e para as cidades da bacia</h1>
-  <p>Para Sabará e para as cidades por onde passam os rios antes de chegar aqui. Previsão é estimativa e erra, principalmente nas tempestades de verão, que são muito localizadas.</p>
+  <p>Para Sabará e para as cidades por onde passam os rios antes de chegar aqui, com a chuva prevista em milímetros. Previsão é estimativa e erra, principalmente nas tempestades de verão, que são muito localizadas.</p>
 </section>
 <p class="avisoc" role="note"><b>Não é uma ferramenta oficial.</b> Em caso de risco, siga a Defesa Civil: <b>199</b> · Bombeiros: <b>193</b>.</p>
 <section class="oficialP" aria-labelledby="ofT">
@@ -253,8 +253,29 @@ table.res td,table.res th{white-space:nowrap}
   <div class="prevI" id="prevB"></div>
 </section>
 
+<p class="fonteP" style="--c:var(--accent)"><b>Chuva em milímetros:</b> o INMET não informa a quantidade de chuva prevista. Por isso, os números abaixo vêm do <a href="https://open-meteo.com/">Open-Meteo</a>, um serviço gratuito que combina vários modelos do tempo. É um complemento: por ser estimativa automática, pode ser diferente da previsão oficial acima.</p>
+
+<section class="card">
+  <h2>Chuva prevista nas cidades da bacia (mm)</h2>
+  <div class="tbl"><table id="resumo" class="res" style="min-width:0"></table></div>
+  <p class="muted" style="font-size:13px;margin:6px 0 0">Valores em milímetros, em faixas, porque a previsão não tem precisão de casa decimal.</p>
+  <div id="sinal"></div>
+</section>
+
+<section class="card">
+  <h2>Chuva hora a hora em <span id="cidT">Sabará</span></h2>
+  <div class="chips" id="chipsM" role="group" aria-label="Escolha a cidade"></div>
+  <h3>Hoje</h3>
+  <div class="strip"><div class="hrs" id="hoje"></div></div>
+  <h3>Amanhã</h3>
+  <div class="strip"><div class="hrs" id="amanha"></div></div>
+  <ul class="leg"><li><i style="opacity:.45"></i>chance de chuva na hora</li><li><i></i>hora com 1 mm ou mais previsto</li></ul>
+  <h3>Próximos 7 dias</h3>
+  <div class="dias" id="dias"></div>
+</section>
+
 <footer>
-  <div>Previsão e alertas do <a href="https://portal.inmet.gov.br/">INMET</a>. O painel não usa a previsão para definir os estágios dos rios: os estágios usam o nível dos rios e a chuva que já caiu, medida nos pluviômetros. Para alertas, o que vale são os alertas oficiais da Defesa Civil.</div>
+  <div>Previsão e alertas do <a href="https://portal.inmet.gov.br/">INMET</a>; chuva em milímetros do <a href="https://open-meteo.com/">Open-Meteo</a>. O painel não usa a previsão para definir os estágios dos rios: os estágios usam o nível dos rios e a chuva que já caiu, medida nos pluviômetros. Para alertas, o que vale são os alertas oficiais da Defesa Civil.</div>
   <div>Painel desenvolvido por <strong>Simone de Figueiredo Cunha</strong> com auxílio de IA.</div>
 </footer>
 </main>
@@ -302,7 +323,62 @@ async function inmet(){
     A.innerHTML='<p class="muted" style="margin:0">Consulte direto no <a href="https://alertas2.inmet.gov.br/">site de alertas do INMET</a>.</p>';}
 }
 inmet();setInterval(inmet,15*60e3);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)inmet();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){inmet();if(dados)carregarMM();}});
+// Chuva em milímetros (Open-Meteo): o INMET não informa a quantidade prevista
+const fmt=(v,d=0)=>v==null||isNaN(v)?'—':Number(v).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const faixa=v=>v==null||isNaN(v)?'—':v<1?'menos de 1 mm':v<5?'até 5 mm':v<15?'5 a 15 mm':v<30?'15 a 30 mm':v<60?'30 a 60 mm':v<100?'60 a 100 mm':'mais de 100 mm';
+const fx=v=>v==null||isNaN(v)?'—':v<1?'&lt;1':v<5?'até 5':v<15?'5–15':v<30?'15–30':v<60?'30–60':v<100?'60–100':'&gt;100';
+const CIDADES=[['Sabará',-19.886,-43.807],['Caeté',-19.880,-43.669],['Raposos',-19.966,-43.804],['Nova Lima',-19.985,-43.847],['Rio Acima',-20.088,-43.788],['Itabirito',-20.253,-43.801]];
+let dados=null,selM=0;try{const v=+localStorage.getItem('cidPrev');if(v>=0&&v<CIDADES.length)selM=v;}catch(e){}
+async function carregarMM(){
+  try{
+    const u='https://api.open-meteo.com/v1/forecast?latitude='+CIDADES.map(c=>c[1]).join(',')+'&longitude='+CIDADES.map(c=>c[2]).join(',')+
+      '&hourly=precipitation,precipitation_probability&daily=precipitation_sum,precipitation_probability_max&forecast_days=8&timezone=America%2FSao_Paulo';
+    const r=await fetch(u);if(!r.ok)throw new Error(r.status);let j=await r.json();if(!Array.isArray(j))j=[j];dados=j;
+    resumoMM();chipsMM();cidadeMM();
+  }catch(e){document.getElementById('resumo').innerHTML='<tbody><tr><td class="muted">Não foi possível carregar a chuva em milímetros agora. Tentando de novo em alguns minutos.</td></tr></tbody>';}
+}
+function horas(d){return d.hourly.time.map((t,i)=>({t,dia:t.slice(0,10),h:+t.slice(11,13),p:d.hourly.precipitation[i]||0,pr:d.hourly.precipitation_probability?.[i]??0}));}
+function resumoMM(){
+  const hj=hojeStr(),am=amanhaStr(),ha=horaAgora();
+  const linhas=dados.map((d,k)=>{const hs=horas(d);
+    const fut=hs.filter(h=>(h.dia===hj&&h.h>=ha)||h.dia>hj);
+    const s24=fut.slice(0,24).reduce((a,h)=>a+h.p,0);
+    let m6=0;for(let i=0;i<Math.min(48,fut.length);i++)m6=Math.max(m6,fut.slice(i,i+6).reduce((a,h)=>a+h.p,0));
+    const di=d.daily;const ia=di.time.indexOf(am);const s7=di.precipitation_sum.slice(0,7).reduce((a,v)=>a+(v||0),0);
+    return {nome:CIDADES[k][0],s24,m6,am:ia>=0?di.precipitation_sum[ia]:null,s7,s48:fut.slice(0,48).reduce((a,h)=>a+h.p,0)};});
+  document.getElementById('resumo').innerHTML='<thead><tr><th>Cidade</th><th class="n">Próx. 24 h</th><th class="n">Amanhã</th><th class="n">Maior em 6 h</th><th class="n">7 dias</th></tr></thead><tbody>'+
+    linhas.map(l=>`<tr><td><b>${l.nome}</b></td><td class="n"><b>${fx(l.s24)}</b></td><td class="n">${fx(l.am)}</td><td class="n">${fx(l.m6)}</td><td class="n">${fx(l.s7)}</td></tr>`).join('')+'</tbody>';
+  const cae=linhas.find(l=>l.nome==='Caeté'),cima=linhas.filter(l=>['Raposos','Nova Lima','Rio Acima','Itabirito'].includes(l.nome));
+  const m48=cima.reduce((a,l)=>a+l.s48,0)/cima.length;
+  let n=0,t=[];
+  if(cae.m6>=60){n=2;t.push(`Previsão de ${faixa(cae.m6)} em 6 horas em Caeté. Nas cheias passadas, chuva assim na cabeceira fez o Rio Sabará subir muito.`);}
+  else if(cae.m6>=30){n=1;t.push(`Previsão de ${faixa(cae.m6)} em 6 horas em Caeté. Chuva assim já fez o Rio Sabará subir bastante.`);}
+  if(m48>=120){n=Math.max(n,1);t.push(`Previsão de ${faixa(m48)} em 48 h rio acima (média de Raposos, Nova Lima, Rio Acima e Itabirito): o Rio das Velhas pode subir nos próximos dias.`);}
+  if(!t.length)t.push('Sem chuva forte prevista em milímetros para Caeté e rio acima nas próximas 48 horas.');
+  t.push('É estimativa: acompanhe os alertas oficiais.');
+  const p=document.createElement('p');p.className='prevbox';p.style.setProperty('--c',css(['--s0','--s1','--s2'][n]));p.textContent=t.join(' ');
+  const b=document.getElementById('sinal');b.innerHTML='';b.appendChild(p);
+}
+function chipsMM(){
+  const c=document.getElementById('chipsM');if(c.childElementCount)return;
+  CIDADES.forEach(([n],k)=>{const b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=()=>{selM=k;try{localStorage.setItem('cidPrev',k)}catch(e){}cidadeMM();};c.appendChild(b);});
+}
+function cidadeMM(){
+  const d=dados[selM];
+  document.getElementById('cidT').textContent=CIDADES[selM][0];
+  document.querySelectorAll('#chipsM button').forEach((b,k)=>b.setAttribute('aria-pressed',k===selM));
+  const di=d.daily,hs=horas(d),hj=hojeStr(),am=amanhaStr(),ha=horaAgora();
+  const cel=h=>`<div class="hr${h.p>=1?' mm':''}" title="${h.h}h: ${h.pr}% de chance, ${fmt(h.p,1)} mm"><span class="h">${h.h}h</span><span class="pb"><i style="height:${Math.max(0,h.pr)}%"></i></span><span class="pc">${h.pr}%</span><span class="mmv">${h.p>=0.1?fmt(h.p,1):''}</span></div>`;
+  const H=hs.filter(h=>h.dia===hj&&h.h>=ha);
+  document.getElementById('hoje').innerHTML=H.length?H.map(cel).join(''):'<p class="muted">O dia de hoje já terminou.</p>';
+  document.getElementById('amanha').innerHTML=hs.filter(h=>h.dia===am).map(cel).join('');
+  document.getElementById('dias').innerHTML=di.time.slice(0,8).map((t,i)=>{const dt=new Date(t+'T12:00:00-03:00');
+    const nome=i===0?'Hoje':i===1?'Amanhã':DIAS[dt.getUTCDay()].replace(/^./,c=>c.toUpperCase());
+    return `<div class="dia"><span class="n">${nome}<small>${t.slice(8,10)}/${t.slice(5,7)}</small></span><span class="ch">${faixa(di.precipitation_sum[i])}<small>${fmt(di.precipitation_probability_max[i])}% de chance</small></span></div>`;}).join('');
+}
+carregarMM();setInterval(carregarMM,30*60e3);
+
 </script>
 <script src="../rt.js"></script>
 <script src="../aviso.js"></script>
