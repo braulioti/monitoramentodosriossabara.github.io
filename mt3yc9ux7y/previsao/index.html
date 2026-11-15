@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Rios de Sabará · Previsão</title>
-<meta name="description" content="Previsão do tempo para Sabará e para as cidades rio acima: hoje e amanhã hora a hora e os próximos 7 dias.">
+<meta name="description" content="Alertas e previsão oficial do INMET para Sabará e para as cidades da bacia dos rios.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&display=swap">
@@ -179,7 +179,7 @@ footer .lai{border-left-color:var(--goldb)}
 .prevI{display:grid;gap:0}
 .prevI .l{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) auto;gap:10px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
 .prevI .l:first-child{border-top:0}
-.prevI .d{font-weight:700}
+.prevI .d{font-weight:700}.prevI .d small{font-weight:400;color:var(--muted);font-size:13px}
 .prevI .tp{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
 @media (max-width:560px){.prevI .l{grid-template-columns:minmax(0,1fr) auto}.prevI .r{grid-column:1/-1}}
 </style>
@@ -234,144 +234,75 @@ table.res td,table.res th{white-space:nowrap}
 
 <section class="hero" style="--c:var(--accent)">
   <div class="k">Previsão do tempo</div>
-  <h1>Chuva e temperatura previstas para hoje, amanhã e os próximos 7 dias</h1>
+  <h1>Previsão oficial do INMET para Sabará e para as cidades da bacia</h1>
   <p>Para Sabará e para as cidades por onde passam os rios antes de chegar aqui. Previsão é estimativa e erra, principalmente nas tempestades de verão, que são muito localizadas.</p>
-
 </section>
 <p class="avisoc" role="note"><b>Não é uma ferramenta oficial.</b> Em caso de risco, siga a Defesa Civil: <b>199</b> · Bombeiros: <b>193</b>.</p>
 <section class="oficialP" aria-labelledby="ofT">
   <div class="k">Fonte oficial · INMET</div>
-  <h2 id="ofT">Alertas e previsão oficial para Sabará</h2>
+  <h2 id="ofT">Alertas e previsão para Sabará</h2>
   <div id="avisosI"><p class="muted" style="margin:0">Carregando os alertas do INMET…</p></div>
   <div class="prevI" id="prevI"></div>
-  <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://alertas2.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
-</section>
-<p class="fonteP" style="--c:var(--accent)"><b>Detalhe em números:</b> abaixo, a chuva prevista em milímetros, hora a hora e por cidade da bacia, vem do <a href="https://open-meteo.com/">Open-Meteo</a>, um serviço gratuito que combina vários modelos do tempo. É um complemento: por ser estimativa automática, os números podem ser diferentes da previsão oficial acima.</p>
-
-<section class="card">
-  <h2 id="cidT">Sabará</h2>
-  <div class="chips" id="chips" role="group" aria-label="Escolha a cidade"></div>
-  <div class="agoraP" id="agoraP"></div>
+  <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://portal.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
 </section>
 
-<section class="card">
-  <h2>Chuva prevista nas cidades da bacia</h2>
+<section class="card" aria-labelledby="baT">
+  <h2 id="baT">Nas cidades da bacia</h2>
   <p class="muted">Chuva forte em Caeté pesa mais no Rio Sabará. Chuva forte rio acima (Itabirito, Nova Lima, Rio Acima e Raposos) pesa mais no Rio das Velhas.</p>
-  <div class="tbl"><table id="resumo" class="res" style="min-width:0"></table></div>
-  <p class="muted" style="font-size:13px;margin:6px 0 0">Valores em milímetros, em faixas, porque a previsão não tem precisão de casa decimal.</p>
-  <div id="sinal"></div>
-</section>
-
-<section class="card">
-  <h3>Hoje, hora a hora</h3>
-  <div class="strip"><div class="hrs" id="hoje"></div></div>
-  <h3>Amanhã, hora a hora</h3>
-  <div class="strip"><div class="hrs" id="amanha"></div></div>
-  <ul class="leg"><li><i style="opacity:.45"></i>chance de chuva na hora</li><li><i></i>hora com 1 mm ou mais previsto</li></ul>
-</section>
-
-<section class="card">
-  <h3>Próximos 7 dias</h3>
-  <div class="dias" id="dias"></div>
+  <div class="chips" id="chips" role="group" aria-label="Escolha a cidade"></div>
+  <div class="prevI" id="prevB"></div>
 </section>
 
 <footer>
-  <div>Previsão do <a href="https://open-meteo.com/">Open-Meteo</a>, que combina modelos meteorológicos nacionais e internacionais, atualizada de hora em hora. Para alertas, o que vale são os alertas oficiais da Defesa Civil e as medições dos rios e pluviômetros.</div>
+  <div>Previsão e alertas do <a href="https://portal.inmet.gov.br/">INMET</a>. O painel não usa a previsão para definir os estágios dos rios: os estágios usam o nível dos rios e a chuva que já caiu, medida nos pluviômetros. Para alertas, o que vale são os alertas oficiais da Defesa Civil.</div>
   <div>Painel desenvolvido por <strong>Simone de Figueiredo Cunha</strong> com auxílio de IA.</div>
 </footer>
 </main>
 <script>
-const fmt=(v,d=0)=>v==null||isNaN(v)?'—':Number(v).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
-const faixa=v=>v==null||isNaN(v)?'—':v<1?'menos de 1 mm':v<5?'até 5 mm':v<15?'5 a 15 mm':v<30?'15 a 30 mm':v<60?'30 a 60 mm':v<100?'60 a 100 mm':'mais de 100 mm';
-const fx=v=>v==null||isNaN(v)?'—':v<1?'&lt;1':v<5?'até 5':v<15?'5–15':v<30?'15–30':v<60?'30–60':v<100?'60–100':'&gt;100';
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const CIDADES=[['Sabará',-19.886,-43.807],['Caeté',-19.880,-43.669],['Raposos',-19.966,-43.804],['Nova Lima',-19.985,-43.847],['Rio Acima',-20.088,-43.788],['Itabirito',-20.253,-43.801]];
-const WMO={0:'Céu limpo',1:'Poucas nuvens',2:'Parcialmente nublado',3:'Nublado',45:'Neblina',48:'Neblina',51:'Garoa fraca',53:'Garoa',55:'Garoa forte',56:'Garoa gelada',57:'Garoa gelada',61:'Chuva fraca',63:'Chuva',65:'Chuva forte',66:'Chuva gelada',67:'Chuva gelada',71:'Neve',73:'Neve',75:'Neve',80:'Pancadas fracas',81:'Pancadas de chuva',82:'Pancadas fortes',95:'Trovoadas',96:'Trovoadas com granizo',99:'Trovoadas com granizo'};
-const ICO=c=>c==null?'':c<=1?'☀️':c<=2?'⛅':c<=48?'☁️':c<=67?'🌧️':c<=82?'🌦️':'⛈️';
 const DIAS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
-let dados=null,sel=0;try{const v=+localStorage.getItem('cidPrev');if(v>=0&&v<CIDADES.length)sel=v;}catch(e){}
 const hojeStr=()=>new Date().toLocaleDateString('en-CA',{timeZone:'America/Sao_Paulo'});
 const amanhaStr=()=>new Date(Date.now()+24*3600e3).toLocaleDateString('en-CA',{timeZone:'America/Sao_Paulo'});
 const horaAgora=()=>+new Date().toLocaleString('en-US',{timeZone:'America/Sao_Paulo',hour:'numeric',hour12:false})%24;
-async function carregar(){
-  const st=document.getElementById('stxt'),dot=document.getElementById('dot');
-  try{
-    const u='https://api.open-meteo.com/v1/forecast?latitude='+CIDADES.map(c=>c[1]).join(',')+'&longitude='+CIDADES.map(c=>c[2]).join(',')+
-      '&current=temperature_2m,weather_code,relative_humidity_2m,precipitation_probability'+
-      '&hourly=temperature_2m,precipitation,precipitation_probability,weather_code'+
-      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max'+
-      '&forecast_days=8&timezone=America%2FSao_Paulo';
-    const r=await fetch(u);if(!r.ok)throw new Error(r.status);let j=await r.json();if(!Array.isArray(j))j=[j];dados=j;
-    dot.className='dot';st.textContent='Previsão atualizada às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+' · próxima atualização em 30 minutos';
-    resumo();chips();cidade();
-  }catch(e){dot.className='dot stale';st.innerHTML='<span class="erro">Não foi possível carregar a previsão agora.</span> Tentando de novo em alguns minutos.';}
-}
-function horas(d){return d.hourly.time.map((t,i)=>({t,dia:t.slice(0,10),h:+t.slice(11,13),tp:d.hourly.temperature_2m[i],p:d.hourly.precipitation[i]||0,pr:d.hourly.precipitation_probability?.[i]??0,c:d.hourly.weather_code?.[i]}));}
-function resumo(){
-  const hj=hojeStr(),am=amanhaStr(),ha=horaAgora();
-  const linhas=dados.map((d,k)=>{const hs=horas(d);
-    const fut=hs.filter(h=>(h.dia===hj&&h.h>=ha)||h.dia>hj);
-    const s24=fut.slice(0,24).reduce((a,h)=>a+h.p,0);
-    let m6=0;for(let i=0;i<Math.min(48,fut.length);i++)m6=Math.max(m6,fut.slice(i,i+6).reduce((a,h)=>a+h.p,0));
-    const di=d.daily;const ia=di.time.indexOf(am);const s7=di.precipitation_sum.slice(0,7).reduce((a,v)=>a+(v||0),0);
-    return {nome:CIDADES[k][0],s24,m6,am:ia>=0?di.precipitation_sum[ia]:null,s7,s48:fut.slice(0,48).reduce((a,h)=>a+h.p,0)};});
-  document.getElementById('resumo').innerHTML='<thead><tr><th>Cidade</th><th class="n">Próx. 24 h</th><th class="n">Amanhã</th><th class="n">Maior em 6 h</th><th class="n">7 dias</th></tr></thead><tbody>'+
-    linhas.map(l=>`<tr><td><b>${l.nome}</b></td><td class="n"><b>${fx(l.s24)}</b></td><td class="n">${fx(l.am)}</td><td class="n">${fx(l.m6)}</td><td class="n">${fx(l.s7)}</td></tr>`).join('')+'</tbody>';
-  const cae=linhas.find(l=>l.nome==='Caeté'),cima=linhas.filter(l=>['Raposos','Nova Lima','Rio Acima','Itabirito'].includes(l.nome));
-  const m48=cima.reduce((a,l)=>a+l.s48,0)/cima.length;
-  let n=0,t=[];
-  if(cae.m6>=60){n=2;t.push(`Previsão de ${faixa(cae.m6)} em 6 horas em Caeté. Nas cheias passadas, 60 mm em 6 h na cabeceira levaram o Rio Sabará a sair do leito em 2 a 4 horas.`);}
-  else if(cae.m6>=30){n=1;t.push(`Previsão de ${faixa(cae.m6)} em 6 horas em Caeté. Chuva assim já fez o Rio Sabará subir bastante.`);}
-  if(m48>=120){n=Math.max(n,1);t.push(`Previsão de ${faixa(m48)} em 48 h rio acima (média de Raposos, Nova Lima, Rio Acima e Itabirito): o Rio das Velhas pode subir nos próximos dias.`);}
-  if(!t.length)t.push('Sem chuva forte prevista para Caeté e rio acima nas próximas 48 horas.');
-  const p=document.createElement('p');p.className='prevbox';p.style.setProperty('--c',css(['--s0','--s1','--s2'][n]));p.textContent=t.join(' ');
-  const b=document.getElementById('sinal');b.innerHTML='';b.appendChild(p);
-}
-function chips(){
-  const c=document.getElementById('chips');if(c.childElementCount)return;
-  CIDADES.forEach(([n],k)=>{const b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=()=>{sel=k;try{localStorage.setItem('cidPrev',k)}catch(e){}cidade();};c.appendChild(b);});
-}
-function cidade(){
-  const d=dados[sel],cur=d.current||{};
-  document.getElementById('cidT').textContent=CIDADES[sel][0];
-  document.querySelectorAll('#chips button').forEach((b,k)=>b.setAttribute('aria-pressed',k===sel));
-  const di=d.daily;
-  const hs0=horas(d),hj0=hojeStr(),ha0=horaAgora();
-  const s24=hs0.filter(h=>(h.dia===hj0&&h.h>=ha0)||h.dia>hj0).slice(0,24).reduce((a,h)=>a+h.p,0);
-  document.getElementById('agoraP').innerHTML=`<span class="t">${fmt(cur.temperature_2m)}°</span><span class="d"><b>Estimativa em números (Open-Meteo)</b><br>Hoje: máxima ${fmt(di.temperature_2m_max[0])}°, mínima ${fmt(di.temperature_2m_min[0])}° <br>Chuva nas próximas 24 h: <b>${faixa(s24)}</b> · chance hoje ${fmt(di.precipitation_probability_max[0])}%<br>Umidade agora (estimativa): ${fmt(cur.relative_humidity_2m)}%</span>`;
-  const hs=horas(d),hj=hojeStr(),am=amanhaStr(),ha=horaAgora();
-  const cel=h=>`<div class="hr${h.p>=1?' mm':''}" title="${h.h}h: ${fmt(h.tp)}°, ${h.pr}% de chance, ${fmt(h.p,1)} mm"><span class="h">${h.h}h</span><span class="tp">${fmt(h.tp)}°</span><span class="pb"><i style="height:${Math.max(0,h.pr)}%"></i></span><span class="pc">${h.pr}%</span><span class="mmv">${h.p>=0.1?fmt(h.p,1):''}</span></div>`;
-  const H=hs.filter(h=>h.dia===hj&&h.h>=ha);
-  document.getElementById('hoje').innerHTML=H.length?H.map(cel).join(''):'<p class="muted">O dia de hoje já terminou.</p>';
-  document.getElementById('amanha').innerHTML=hs.filter(h=>h.dia===am).map(cel).join('');
-  document.getElementById('dias').innerHTML=di.time.slice(0,8).map((t,i)=>{const dt=new Date(t+'T12:00:00-03:00');
-    const nome=i===0?'Hoje':i===1?'Amanhã':DIAS[dt.getUTCDay()].replace(/^./,c=>c.toUpperCase());
-    return `<div class="dia"><span class="n">${nome}<small>${t.slice(8,10)}/${t.slice(5,7)}</small></span><span class="tt"><b>${fmt(di.temperature_2m_max[i])}°</b> <span>${fmt(di.temperature_2m_min[i])}°</span></span><span class="ch">${faixa(di.precipitation_sum[i])}<small>${fmt(di.precipitation_probability_max[i])}%</small></span></div>`;}).join('');
-}
-carregar();setInterval(carregar,30*60e3);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&dados)carregar();});
-
-// Alertas e previsão oficiais do INMET para Sabará (coletados no banco a cada 30 min)
 const API_SB='https://ekfyviemlszovciroacn.supabase.co/rest/v1/',KEY_SB='sb_publishable_Bhsw4dhgFwk0jno5kZMeYQ_3tfouypX';
 const sbGet=async p=>{const r=await fetch(API_SB+p,{headers:{apikey:KEY_SB}});if(!r.ok)throw new Error(r.status);return r.json();};
 const SEVI={'Perigo Potencial':['--s1','amarelo'],'Perigo':['--s2','laranja'],'Grande Perigo':['--s3','vermelho']};
 const PER={manha:'manhã',tarde:'tarde',noite:'noite',dia:''};
+const FIM={manha:12,tarde:18,noite:24};
 const hBR=t=>new Date(t).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
 const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const BACIA=['Caeté','Raposos','Nova Lima','Rio Acima','Itabirito'];
+let prev=[],sel='Caeté';try{const v=localStorage.getItem('cidPrevI');if(BACIA.includes(v))sel=v;}catch(e){}
+function linhas(cid){
+  const hoje=hojeStr(),am=amanhaStr(),h=horaAgora();
+  return prev.filter(x=>x.cidade===cid&&!(x.dia===hoje&&FIM[x.periodo]&&h>=FIM[x.periodo])).map(x=>{const d=new Date(x.dia+'T12:00:00-03:00');
+    const nome=x.dia===hoje?'Hoje':x.dia===am?'Amanhã':DIAS[d.getUTCDay()][0].toUpperCase()+DIAS[d.getUTCDay()].slice(1)+` <small>${x.dia.slice(8,10)}/${x.dia.slice(5,7)}</small>`;
+    return `<div class="l"><span class="d">${nome}${PER[x.periodo]?' · '+PER[x.periodo]:''}</span><span class="r">${esc(x.resumo)}</span><span class="tp">${x.temp_max??'—'}° / ${x.temp_min??'—'}°</span></div>`;}).join('')||'<p class="muted" style="margin:0">Previsão indisponível no momento.</p>';
+}
+function bacia(){
+  const c=document.getElementById('chips');
+  if(!c.childElementCount)BACIA.forEach(n=>{const b=document.createElement('button');b.type='button';b.textContent=n;b.onclick=()=>{sel=n;try{localStorage.setItem('cidPrevI',n)}catch(e){}bacia();};c.appendChild(b);});
+  c.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.textContent===sel));
+  document.getElementById('prevB').innerHTML=linhas(sel);
+}
 async function inmet(){
-  const A=document.getElementById('avisosI'),P=document.getElementById('prevI');
+  const A=document.getElementById('avisosI'),st=document.getElementById('stxt'),dot=document.getElementById('dot');
   try{
-    const [av,pv]=await Promise.all([sbGet('inmet_avisos_ativos?select=*'),sbGet('inmet_previsao?select=*&order=dia.asc,ordem.asc')]);
+    const [av,pv]=await Promise.all([sbGet('inmet_avisos_ativos?select=*'),sbGet('inmet_previsao?select=cidade,dia,periodo,ordem,resumo,temp_max,temp_min,atualizado_em&order=dia.asc,ordem.asc')]);
+    prev=pv;
     A.innerHTML=av.length?av.map(a=>{const [c,n]=SEVI[a.severidade]||['--s1',''];
       return `<div class="avI" style="--c:${css(c)}"><b class="t">Alerta de ${esc((a.evento||'').toLowerCase())}${n?' ('+n+')':''} · ${esc(a.severidade)}</b>
       <span>${esc(a.riscos)}</span>${a.instrucoes?`<small>${esc(a.instrucoes)}</small>`:''}<small>Válido de ${hBR(a.inicio)} até ${hBR(a.fim)}</small></div>`;}).join('')
       :'<p style="margin:0"><b>Nenhum alerta do INMET para Sabará agora.</b></p>';
-    const hoje=hojeStr(),am=amanhaStr();
-    P.innerHTML=pv.slice(0,7).map(x=>{const d=new Date(x.dia+'T12:00:00');const nome=x.dia===hoje?'Hoje':x.dia===am?'Amanhã':DIAS[d.getDay()][0].toUpperCase()+DIAS[d.getDay()].slice(1);
-      return `<div class="l"><span class="d">${nome}${PER[x.periodo]?' · '+PER[x.periodo]:''}</span><span class="r">${esc(x.resumo)}</span><span class="tp">${x.temp_max??'—'}° / ${x.temp_min??'—'}°</span></div>`;}).join('');
-  }catch(e){A.innerHTML='<p class="muted" style="margin:0">Não foi possível carregar os alertas do INMET agora. Consulte <a href="https://alertas2.inmet.gov.br/">alertas2.inmet.gov.br</a>.</p>';}
+    document.getElementById('prevI').innerHTML=linhas('Sabará');
+    bacia();
+    const u=pv.map(x=>x.atualizado_em).filter(Boolean).sort().at(-1);
+    dot.className='dot';st.textContent='Previsão do INMET'+(u?' coletada às '+new Date(u).toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit'}):'')+' · atualiza a cada 30 minutos';
+  }catch(e){dot.className='dot stale';st.innerHTML='<span class="erro">Não foi possível carregar a previsão agora.</span> Tentando de novo em alguns minutos.';
+    A.innerHTML='<p class="muted" style="margin:0">Consulte direto no <a href="https://alertas2.inmet.gov.br/">site de alertas do INMET</a>.</p>';}
 }
 inmet();setInterval(inmet,15*60e3);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)inmet();});
 </script>
 <script src="../rt.js"></script>
 <script src="../aviso.js"></script>
