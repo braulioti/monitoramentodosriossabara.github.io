@@ -170,6 +170,18 @@ footer .lai{border-left-color:var(--goldb)}
 @media (max-width:680px){nav.abas a,nav.abas button{white-space:normal!important;line-height:1.15;font-size:12px!important;padding:10px 1px 9px!important;display:flex;align-items:center;justify-content:center}}
 .avisoc{margin:0 0 14px;padding:10px 14px;border:2px solid var(--s3);border-left-width:6px;background:color-mix(in srgb,var(--s3) 10%,var(--panel,var(--bg)));border-radius:10px;font-size:14px;line-height:1.45;color:var(--fg)}
 .avisoc>b:first-child{color:var(--s3)}
+.oficialP{border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:14px;background:var(--panel,var(--bg));padding:16px 18px;margin:0 0 16px;display:grid;gap:12px}
+.oficialP .k{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.oficialP h2{margin:0;font-size:clamp(20px,3vw,24px);line-height:1.2}
+.avI{border-radius:10px;padding:12px 14px;border:2px solid var(--c);background:color-mix(in srgb,var(--c) 12%,var(--panel,var(--bg)));display:grid;gap:4px}
+.avI b.t{font-size:17px}
+.avI small{color:var(--muted)}
+.prevI{display:grid;gap:0}
+.prevI .l{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) auto;gap:10px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
+.prevI .l:first-child{border-top:0}
+.prevI .d{font-weight:700}
+.prevI .tp{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+@media (max-width:560px){.prevI .l{grid-template-columns:minmax(0,1fr) auto}.prevI .r{grid-column:1/-1}}
 </style>
 <style>
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -227,7 +239,14 @@ table.res td,table.res th{white-space:nowrap}
 
 </section>
 <p class="avisoc" role="note"><b>Não é uma ferramenta oficial.</b> Em caso de risco, siga a Defesa Civil: <b>199</b> · Bombeiros: <b>193</b>.</p>
-<p class="fonteP" style="--c:var(--accent)"><b>Fonte:</b> estimativa de modelos numéricos (<a href="https://open-meteo.com/">Open-Meteo</a>). A previsão oficial para Sabará é a da <b>Defesa Civil de Sabará</b> e do <a href="https://portal.inmet.gov.br/">INMET</a>. Por isso os números podem ser diferentes dos publicados por eles.</p>
+<section class="oficialP" aria-labelledby="ofT">
+  <div class="k">Fonte oficial · INMET</div>
+  <h2 id="ofT">Alertas e previsão oficial para Sabará</h2>
+  <div id="avisosI"><p class="muted" style="margin:0">Carregando os alertas do INMET…</p></div>
+  <div class="prevI" id="prevI"></div>
+  <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://alertas2.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
+</section>
+<p class="fonteP" style="--c:var(--accent)"><b>Detalhe em números:</b> abaixo, a chuva prevista em milímetros, hora a hora e por cidade da bacia, vem do <a href="https://open-meteo.com/">Open-Meteo</a>, um serviço gratuito que combina vários modelos do tempo. É um complemento: por ser estimativa automática, os números podem ser diferentes da previsão oficial acima.</p>
 
 <section class="card">
   <h2 id="cidT">Sabará</h2>
@@ -331,6 +350,28 @@ function cidade(){
 }
 carregar();setInterval(carregar,30*60e3);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&dados)carregar();});
+
+// Alertas e previsão oficiais do INMET para Sabará (coletados no banco a cada 30 min)
+const API_SB='https://ekfyviemlszovciroacn.supabase.co/rest/v1/',KEY_SB='sb_publishable_Bhsw4dhgFwk0jno5kZMeYQ_3tfouypX';
+const sbGet=async p=>{const r=await fetch(API_SB+p,{headers:{apikey:KEY_SB}});if(!r.ok)throw new Error(r.status);return r.json();};
+const SEVI={'Perigo Potencial':['--s1','amarelo'],'Perigo':['--s2','laranja'],'Grande Perigo':['--s3','vermelho']};
+const PER={manha:'manhã',tarde:'tarde',noite:'noite',dia:''};
+const hBR=t=>new Date(t).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+async function inmet(){
+  const A=document.getElementById('avisosI'),P=document.getElementById('prevI');
+  try{
+    const [av,pv]=await Promise.all([sbGet('inmet_avisos_ativos?select=*'),sbGet('inmet_previsao?select=*&order=dia.asc,ordem.asc')]);
+    A.innerHTML=av.length?av.map(a=>{const [c,n]=SEVI[a.severidade]||['--s1',''];
+      return `<div class="avI" style="--c:${css(c)}"><b class="t">Alerta de ${esc((a.evento||'').toLowerCase())}${n?' ('+n+')':''} · ${esc(a.severidade)}</b>
+      <span>${esc(a.riscos)}</span>${a.instrucoes?`<small>${esc(a.instrucoes)}</small>`:''}<small>Válido de ${hBR(a.inicio)} até ${hBR(a.fim)}</small></div>`;}).join('')
+      :'<p style="margin:0"><b>Nenhum alerta do INMET para Sabará agora.</b></p>';
+    const hoje=hojeStr(),am=amanhaStr();
+    P.innerHTML=pv.slice(0,7).map(x=>{const d=new Date(x.dia+'T12:00:00');const nome=x.dia===hoje?'Hoje':x.dia===am?'Amanhã':DIAS[d.getDay()][0].toUpperCase()+DIAS[d.getDay()].slice(1);
+      return `<div class="l"><span class="d">${nome}${PER[x.periodo]?' · '+PER[x.periodo]:''}</span><span class="r">${esc(x.resumo)}</span><span class="tp">${x.temp_max??'—'}° / ${x.temp_min??'—'}°</span></div>`;}).join('');
+  }catch(e){A.innerHTML='<p class="muted" style="margin:0">Não foi possível carregar os alertas do INMET agora. Consulte <a href="https://alertas2.inmet.gov.br/">alertas2.inmet.gov.br</a>.</p>';}
+}
+inmet();setInterval(inmet,15*60e3);
 </script>
 <script src="../rt.js"></script>
 <script src="../aviso.js"></script>
