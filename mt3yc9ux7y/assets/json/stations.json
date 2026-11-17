@@ -1,0 +1,200 @@
+[
+  {
+    "cod": "41200430",
+    "nome": "Raposos",
+    "tipo": "Nível do Rio das Velhas + chuva",
+    "op": "SGB/ANA",
+    "la": -19.9631,
+    "lo": -43.8067,
+    "end": "Rua Herval Silva, Galo Velho, Raposos",
+    "mede": "Nível, vazão e chuva a cada 15 min",
+    "sit": "Automática, em tempo real"
+  },
+  {
+    "cod": "41195050",
+    "nome": "Rio Acima",
+    "tipo": "Nível do Rio das Velhas + chuva",
+    "op": "SGB/ANA",
+    "la": -20.0919,
+    "lo": -43.7919,
+    "end": "Rua João Clemente Filho, Rio Acima",
+    "mede": "Nível, vazão e chuva a cada 15 min",
+    "sit": "Automática, em tempo real"
+  },
+  {
+    "cod": "41210001",
+    "nome": "Caeté",
+    "tipo": "Nível do Córrego Caeté (bacia do Rio Sabará) + chuva",
+    "op": "IGAM/ANA",
+    "la": -19.9028,
+    "lo": -43.6664,
+    "end": "Praça Cerâmica, São Geraldo, Caeté",
+    "mede": "Nível e chuva a cada 15 min",
+    "sit": "Automática, em tempo real"
+  },
+  {
+    "cod": "315670023H",
+    "nome": "Cemaden Ribeirão Sabará",
+    "tipo": "Nível do Rio Sabará + chuva",
+    "op": "Cemaden",
+    "la": -19.8869,
+    "lo": -43.8005,
+    "end": "Ponte da Av. Longitudinal, Siderúrgica (perto da E.E. Dona Bilu)",
+    "mede": "Nível do rio (sensor acima da água) e chuva, de hora em hora (10 min em eventos)",
+    "sit": "Funcionou de 23/04/2021 a 24/02/2023; parado por 3 anos e 8 meses; voltou em 26/10/2026"
+  },
+  {
+    "cod": "41199998",
+    "nome": "Honório Bicalho",
+    "tipo": "Nível do Rio das Velhas",
+    "op": "SGB/ANA",
+    "la": -20.0247,
+    "lo": -43.8239,
+    "end": "Ponte sobre o Rio das Velhas, Honório Bicalho, Nova Lima",
+    "mede": "Leitura diária da régua (7h e 17h)",
+    "sit": "Manual, série disponível até 2023"
+  },
+  {
+    "cod": "1943006",
+    "nome": "Sabará (Centro)",
+    "tipo": "Pluviômetro",
+    "op": "SGB/ANA",
+    "la": -19.8931,
+    "lo": -43.815,
+    "end": "Rua São Francisco, Inconfidência, Sabará",
+    "mede": "Chuva diária (lida às 7h)",
+    "sit": "Manual, dado chega com atraso"
+  },
+  {
+    "cod": "1943141",
+    "nome": "Cemaden N. Sra. de Fátima",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.87,
+    "lo": -43.8639,
+    "end": "Rua Cláudio, Nações Unidas, Sabará",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "1943143",
+    "nome": "Cemaden Borba Gato",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.8331,
+    "lo": -43.8439,
+    "end": "Rua Silvana Almeida, Borba Gato, Sabará",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "1943142",
+    "nome": "Cemaden Ana Lúcia",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.8811,
+    "lo": -43.9039,
+    "end": "Rua Hybris, Ana Lúcia, Sabará",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "1943140",
+    "nome": "Cemaden Santa Inês",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.885,
+    "lo": -43.9061,
+    "end": "Rua Olívio Rodrigues, Santa Inês, Sabará",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "1943120",
+    "nome": "Cemaden Caeté (José Brandão)",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.8761,
+    "lo": -43.6669,
+    "end": "Rua Madri, Vila das Flores, Caeté",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "1943123",
+    "nome": "Cemaden Caeté (Bom Sucesso)",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -19.8919,
+    "lo": -43.6619,
+    "end": "Rua São Damião, Bonsucesso, Caeté",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "2043115",
+    "nome": "Cemaden Honório Bicalho",
+    "tipo": "Pluviômetro",
+    "op": "Cemaden",
+    "la": -20.021,
+    "lo": -43.825,
+    "end": "Rua Santiago, Honório Bicalho, Nova Lima",
+    "mede": "Chuva a cada 10 min",
+    "sit": "Automático, download por formulário"
+  },
+  {
+    "cod": "41229000",
+    "nome": "IGAM Sabará (Velhas)",
+    "tipo": "Qualidade da água",
+    "op": "IGAM",
+    "la": -19.9077,
+    "lo": -43.818,
+    "end": "Rua Santa Rita de Cássia, Sabará",
+    "mede": "Coleta periódica de qualidade da água",
+    "sit": "Não mede nível"
+  },
+  {
+    "cod": "41230500",
+    "nome": "IGAM Rio Sabará (perto da foz)",
+    "tipo": "Qualidade da água",
+    "op": "IGAM",
+    "la": -19.8943,
+    "lo": -43.8136,
+    "end": "Rua Mário Machado, Paciência (Praça de Esportes)",
+    "mede": "Coleta periódica de qualidade da água",
+    "sit": "Não mede nível"
+  },
+  {
+    "cod": "41230700",
+    "nome": "IGAM Velhas abaixo do Rio Sabará",
+    "tipo": "Qualidade da água",
+    "op": "IGAM",
+    "la": -19.8906,
+    "lo": -43.8306,
+    "end": "Roça Grande, Sabará",
+    "mede": "Coleta periódica de qualidade da água",
+    "sit": "Não mede nível"
+  },
+  {
+    "cod": "41220000",
+    "nome": "Siderúrgica (Rio Sabará)",
+    "tipo": "Nível do Rio Sabará",
+    "op": "ANA (antiga)",
+    "la": -19.8836,
+    "lo": -43.7964,
+    "end": "Rua Nossa Senhora do Ó, Siderúrgica, Sabará",
+    "mede": "Régua lida de 1941 a 1965",
+    "sit": "Desativada"
+  },
+  {
+    "cod": "REGUA",
+    "nome": "Régua e câmera da Prefeitura",
+    "tipo": "Nível do Rio das Velhas",
+    "op": "Prefeitura / Defesa Civil",
+    "la": -19.8942,
+    "lo": -43.8147,
+    "end": "Ponte Saldanha Marinho (Caieira / Praça de Esportes)",
+    "mede": "Imagem ao vivo no YouTube",
+    "sit": "Ao vivo, sem histórico público"
+  }
+]

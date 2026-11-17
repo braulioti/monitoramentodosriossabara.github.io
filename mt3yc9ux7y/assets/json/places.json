@@ -1,0 +1,282 @@
+[
+  {
+    "nome": "General Carneiro",
+    "lat": -19.8844,
+    "lon": -43.8539,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Santo Antônio de Roça Grande",
+    "lat": -19.8931,
+    "lon": -43.836,
+    "nivelVelhasM": 4.0,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Vila Santa Cruz",
+    "lat": -19.8805,
+    "lon": -43.7968,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 1.5
+  },
+  {
+    "nome": "Siderúrgica",
+    "lat": -19.8836,
+    "lon": -43.7964,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 2.0
+  },
+  {
+    "nome": "Campo Santo Antônio de Pádua",
+    "lat": -19.8897,
+    "lon": -43.8014,
+    "nivelVelhasM": 10.5,
+    "subidaSabaraM": 1.0
+  },
+  {
+    "nome": "Rosário II",
+    "lat": -19.8799,
+    "lon": -43.83,
+    "nivelVelhasM": 4.5,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Itacolomi",
+    "lat": -19.878,
+    "lon": -43.8523,
+    "nivelVelhasM": 10.5,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Rosário",
+    "lat": -19.8808,
+    "lon": -43.8421,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Rosário I",
+    "lat": -19.886,
+    "lon": -43.8239,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Rosário III",
+    "lat": -19.8861,
+    "lon": -43.836,
+    "nivelVelhasM": 5.5,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Adelmolândia",
+    "lat": -19.9057,
+    "lon": -43.8126,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Paciência (norte)",
+    "lat": -19.8964,
+    "lon": -43.8162,
+    "nivelVelhasM": 3.0,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Paciência (sul)",
+    "lat": -19.9154,
+    "lon": -43.8251,
+    "nivelVelhasM": 1.5,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Morada da Serra",
+    "lat": -19.8961,
+    "lon": -43.7926,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Águas Férreas",
+    "lat": -19.899,
+    "lon": -43.8208,
+    "nivelVelhasM": 9.0,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Alto do Fidalgo",
+    "lat": -19.8938,
+    "lon": -43.7974,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Vila Francisco de Moura",
+    "lat": -19.8945,
+    "lon": -43.8019,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 5.0
+  },
+  {
+    "nome": "Córrego da Ilha",
+    "lat": -19.8956,
+    "lon": -43.8026,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 5.0
+  },
+  {
+    "nome": "Centro",
+    "lat": -19.8913,
+    "lon": -43.8103,
+    "nivelVelhasM": 8.0,
+    "subidaSabaraM": 1.5
+  },
+  {
+    "nome": "Morro da Cruz",
+    "lat": -19.8968,
+    "lon": -43.8087,
+    "nivelVelhasM": 10.0,
+    "subidaSabaraM": 3.0
+  },
+  {
+    "nome": "Mangabeiras",
+    "lat": -19.8751,
+    "lon": -43.7966,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 1.5
+  },
+  {
+    "nome": "Vila Michel",
+    "lat": -19.8764,
+    "lon": -43.7937,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 1.5
+  },
+  {
+    "nome": "Mangueiras",
+    "lat": -19.875,
+    "lon": -43.7927,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 2.0
+  },
+  {
+    "nome": "Esplanada",
+    "lat": -19.8884,
+    "lon": -43.7952,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Vila Rica",
+    "lat": -19.8891,
+    "lon": -43.8498,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Val Paraíso II",
+    "lat": -19.8881,
+    "lon": -43.8577,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Vila Eugênio Rossi",
+    "lat": -19.8854,
+    "lon": -43.8571,
+    "nivelVelhasM": 7.0,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Caieira",
+    "lat": -19.8919,
+    "lon": -43.8162,
+    "nivelVelhasM": 3.0,
+    "subidaSabaraM": 7.0
+  },
+  {
+    "nome": "Morro São Francisco",
+    "lat": -19.889,
+    "lon": -43.8145,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Vila Esperança",
+    "lat": -19.8861,
+    "lon": -43.8107,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Terra Santa",
+    "lat": -19.8858,
+    "lon": -43.8087,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 6.0
+  },
+  {
+    "nome": "Arraial Velho",
+    "lat": -19.9154,
+    "lon": -43.8191,
+    "nivelVelhasM": 4.0,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Saquinho",
+    "lat": -19.9008,
+    "lon": -43.8003,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Gaia",
+    "lat": -19.8753,
+    "lon": -43.7879,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 1.0
+  },
+  {
+    "nome": "Bela Vista",
+    "lat": -19.8965,
+    "lon": -43.8043,
+    "nivelVelhasM": null,
+    "subidaSabaraM": 5.0
+  },
+  {
+    "nome": "Cabral",
+    "lat": -19.8821,
+    "lon": -43.8045,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Inconfidência",
+    "lat": -19.8886,
+    "lon": -43.8116,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Nossa Senhora da Conceição",
+    "lat": -19.8859,
+    "lon": -43.8037,
+    "nivelVelhasM": 11.5,
+    "subidaSabaraM": 1.0
+  },
+  {
+    "nome": "Vila São José",
+    "lat": -19.8792,
+    "lon": -43.849,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  },
+  {
+    "nome": "Várzea do Moinho",
+    "lat": -19.8927,
+    "lon": -43.8573,
+    "nivelVelhasM": null,
+    "subidaSabaraM": null
+  }
+]

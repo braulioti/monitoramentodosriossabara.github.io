@@ -1,0 +1,200 @@
+[
+  {
+    "Evento": "Dezembro de 2011",
+    "Data": "2011-12-19",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 14.8,
+    "Chuva 3 dias (mm)": 155.8,
+    "Chuva 7 dias (mm)": 271.9,
+    "Chuva 30 dias (mm)": 607.5,
+    "Chuva no mês até a data (mm)": 399.2
+  },
+  {
+    "Evento": "Dezembro de 2011",
+    "Data": "2011-12-19",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 12.4,
+    "Chuva 3 dias (mm)": 97.3,
+    "Chuva 7 dias (mm)": 241.5,
+    "Chuva 30 dias (mm)": 584,
+    "Chuva no mês até a data (mm)": 347.8
+  },
+  {
+    "Evento": "Dezembro de 2011",
+    "Data": "2011-12-19",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": null,
+    "Chuva 3 dias (mm)": null,
+    "Chuva 7 dias (mm)": null,
+    "Chuva 30 dias (mm)": null,
+    "Chuva no mês até a data (mm)": null
+  },
+  {
+    "Evento": "Janeiro de 2020",
+    "Data": "2020-01-24",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 113.9,
+    "Chuva 3 dias (mm)": 113.9,
+    "Chuva 7 dias (mm)": 131.7,
+    "Chuva 30 dias (mm)": 405.4,
+    "Chuva no mês até a data (mm)": 405.4
+  },
+  {
+    "Evento": "Janeiro de 2020",
+    "Data": "2020-01-24",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 123.9,
+    "Chuva 3 dias (mm)": 137.1,
+    "Chuva 7 dias (mm)": 233.2,
+    "Chuva 30 dias (mm)": 442.4,
+    "Chuva no mês até a data (mm)": 439.4
+  },
+  {
+    "Evento": "Janeiro de 2020",
+    "Data": "2020-01-24",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": null,
+    "Chuva 3 dias (mm)": null,
+    "Chuva 7 dias (mm)": null,
+    "Chuva 30 dias (mm)": null,
+    "Chuva no mês até a data (mm)": null
+  },
+  {
+    "Evento": "Janeiro de 2022",
+    "Data": "2022-01-08",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 105.3,
+    "Chuva 3 dias (mm)": 137.3,
+    "Chuva 7 dias (mm)": 180.6,
+    "Chuva 30 dias (mm)": 434.4,
+    "Chuva no mês até a data (mm)": 193.2
+  },
+  {
+    "Evento": "Janeiro de 2022",
+    "Data": "2022-01-08",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 24.8,
+    "Chuva 3 dias (mm)": 93.8,
+    "Chuva 7 dias (mm)": 154.4,
+    "Chuva 30 dias (mm)": 327.9,
+    "Chuva no mês até a data (mm)": 166.8
+  },
+  {
+    "Evento": "Janeiro de 2022",
+    "Data": "2022-01-08",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": null,
+    "Chuva 3 dias (mm)": null,
+    "Chuva 7 dias (mm)": null,
+    "Chuva 30 dias (mm)": null,
+    "Chuva no mês até a data (mm)": null
+  },
+  {
+    "Evento": "Dezembro de 2022",
+    "Data": "2022-12-21",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 103.2,
+    "Chuva 3 dias (mm)": 152.4,
+    "Chuva 7 dias (mm)": 183.1,
+    "Chuva 30 dias (mm)": 585.7,
+    "Chuva no mês até a data (mm)": 400.4
+  },
+  {
+    "Evento": "Dezembro de 2022",
+    "Data": "2022-12-21",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 122.8,
+    "Chuva 3 dias (mm)": 174.2,
+    "Chuva 7 dias (mm)": 183.5,
+    "Chuva 30 dias (mm)": 479.6,
+    "Chuva no mês até a data (mm)": 336.8
+  },
+  {
+    "Evento": "Dezembro de 2022",
+    "Data": "2022-12-21",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": 79.3,
+    "Chuva 3 dias (mm)": 157.8,
+    "Chuva 7 dias (mm)": 158.2,
+    "Chuva 30 dias (mm)": null,
+    "Chuva no mês até a data (mm)": null
+  },
+  {
+    "Evento": "Dezembro de 2024",
+    "Data": "2024-12-22",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 96.4,
+    "Chuva 3 dias (mm)": 149.4,
+    "Chuva 7 dias (mm)": 171.9,
+    "Chuva 30 dias (mm)": 309.3,
+    "Chuva no mês até a data (mm)": 299.8
+  },
+  {
+    "Evento": "Dezembro de 2024",
+    "Data": "2024-12-22",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 34.3,
+    "Chuva 3 dias (mm)": 49.8,
+    "Chuva 7 dias (mm)": 70.6,
+    "Chuva 30 dias (mm)": 213.7,
+    "Chuva no mês até a data (mm)": 208.2
+  },
+  {
+    "Evento": "Dezembro de 2024",
+    "Data": "2024-12-22",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": null,
+    "Chuva 3 dias (mm)": null,
+    "Chuva 7 dias (mm)": 66.4,
+    "Chuva 30 dias (mm)": null,
+    "Chuva no mês até a data (mm)": null
+  },
+  {
+    "Evento": "Janeiro de 2026",
+    "Data": "2026-01-23",
+    "Pluviômetro": "Sabará (Centro)",
+    "Código": "01943006",
+    "Chuva no dia (mm)": 73.4,
+    "Chuva 3 dias (mm)": 138.9,
+    "Chuva 7 dias (mm)": 147,
+    "Chuva 30 dias (mm)": 275,
+    "Chuva no mês até a data (mm)": 273.9
+  },
+  {
+    "Evento": "Janeiro de 2026",
+    "Data": "2026-01-23",
+    "Pluviômetro": "Caeté",
+    "Código": "01943010",
+    "Chuva no dia (mm)": 69,
+    "Chuva 3 dias (mm)": 109.4,
+    "Chuva 7 dias (mm)": 118.5,
+    "Chuva 30 dias (mm)": 331.1,
+    "Chuva no mês até a data (mm)": 298.2
+  },
+  {
+    "Evento": "Janeiro de 2026",
+    "Data": "2026-01-23",
+    "Pluviômetro": "Nova Lima (Morro Velho)",
+    "Código": "01943000",
+    "Chuva no dia (mm)": 0,
+    "Chuva 3 dias (mm)": 86.8,
+    "Chuva 7 dias (mm)": 93.8,
+    "Chuva 30 dias (mm)": 223.6,
+    "Chuva no mês até a data (mm)": 223.6
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "Evento": "Dezembro de 2011",
+    "Estação": "Honório Bicalho (Velhas, Nova Lima)",
+    "Código": "41199998",
+    "Maior cota diária (cm)": 443,
+    "Dia": "2011-12-16"
+  },
+  {
+    "Evento": "Dezembro de 2011",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 778,
+    "Dia": "2011-12-20"
+  },
+  {
+    "Evento": "Janeiro de 2020",
+    "Estação": "Honório Bicalho (Velhas, Nova Lima)",
+    "Código": "41199998",
+    "Maior cota diária (cm)": 590,
+    "Dia": "2020-01-25"
+  },
+  {
+    "Evento": "Janeiro de 2020",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 1012,
+    "Dia": "2020-01-25"
+  },
+  {
+    "Evento": "Janeiro de 2022",
+    "Estação": "Honório Bicalho (Velhas, Nova Lima)",
+    "Código": "41199998",
+    "Maior cota diária (cm)": 710,
+    "Dia": "2022-01-09"
+  },
+  {
+    "Evento": "Janeiro de 2022",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 1224,
+    "Dia": "2022-01-10"
+  },
+  {
+    "Evento": "Dezembro de 2022",
+    "Estação": "Honório Bicalho (Velhas, Nova Lima)",
+    "Código": "41199998",
+    "Maior cota diária (cm)": 330,
+    "Dia": "2022-12-21"
+  },
+  {
+    "Evento": "Dezembro de 2022",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 597,
+    "Dia": "2022-12-21"
+  },
+  {
+    "Evento": "Dezembro de 2024",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 336.5,
+    "Dia": "2024-12-22"
+  },
+  {
+    "Evento": "Janeiro de 2026",
+    "Estação": "Ponte Raul Soares (Velhas)",
+    "Código": "41340000",
+    "Maior cota diária (cm)": 475,
+    "Dia": "2026-01-23"
+  }
+]

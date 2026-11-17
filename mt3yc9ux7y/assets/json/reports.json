@@ -1,0 +1,62 @@
+[
+  {
+    "titulo": "Rua São Cristóvão (Paciência)",
+    "texto": "Rio das Velhas. Água dentro de casa em 1997 e 2020 (cerca de 45 cm) e em 2022 (mais de 1 m). Em dez/1995 parou um pouco abaixo.",
+    "lat": -19.9144,
+    "lon": -43.82281
+  },
+  {
+    "titulo": "Av. Albert Scharlé (Paciência)",
+    "texto": "Rio das Velhas. Em jan/2020, por volta das 20h, uma família perdeu tudo; atingida de novo em 2022. Outro morador relata cerca de 2 m de água dentro de casa em jan/1997 e jan/2020 e mais de 2 m em jan/2022, com a água subindo devagar e ficando uns 3 dias. Perto do antigo Supimpa, um terceiro morador relata água só na rua.",
+    "lat": -19.91391,
+    "lon": -43.82486
+  },
+  {
+    "titulo": "Roça Grande",
+    "texto": "Rio das Velhas. Mais de 1 m de água dentro de casa em duas cheias, provavelmente 2020 e 2022.",
+    "lat": -19.8931,
+    "lon": -43.836
+  },
+  {
+    "titulo": "Ponte de Roça Grande",
+    "texto": "Rio das Velhas. Segundo moradores e fotos publicadas pela página Sou Sabará em 2015, a ponte caiu no começo de janeiro de 1997 (dia 3 ou 4), e a travessia passou a ser feita por uma ponte improvisada. Em jan/2022 ficou intransitável, com trincas na estrutura (Estado de Minas, 10/01/2022).",
+    "lat": -19.88941,
+    "lon": -43.830446
+  },
+  {
+    "titulo": "Rua Beira Linha (Roça Grande)",
+    "texto": "Rio das Velhas. Jan/1997: água até o pescoço no terreiro de uma casa (comentário público em post da página Sou Sabará). Fica na sequência da Av. Dr. Antônio Henrique de Melo e da Rua Beira Rio.",
+    "lat": -19.8889,
+    "lon": -43.8348
+  },
+  {
+    "titulo": "Ponte de General Carneiro (Ribeirão Arrudas)",
+    "texto": "Rio das Velhas. Jan/2022: a ponte sobre o Arrudas ficou coberta pelas águas do Rio das Velhas (Estado de Minas, 10/01/2022).",
+    "lat": -19.8829,
+    "lon": -43.8602
+  },
+  {
+    "titulo": "Av. Dr. Antônio Henrique de Melo (Roça Grande)",
+    "texto": "Rio das Velhas. Jan/2020, por volta das 23h: a água subiu de repente e chegou a 1,50 m dentro de casa; baixou em cerca de um dia. Chovia no local.",
+    "lat": -19.8903,
+    "lon": -43.8337
+  },
+  {
+    "titulo": "Rua José Brochado Gomes (Laranjeiras)",
+    "texto": "Rio Sabará. Madrugada de 16/01/2003: cerca de 1 m dentro de casa; água também nas Laranjeiras e até o asilo.",
+    "lat": -19.8925,
+    "lon": -43.80576
+  },
+  {
+    "titulo": "Rua João Hamaceck (Praia dos Bandeirantes)",
+    "texto": "Rio Sabará. Água no beco do portão, sem entrar na casa; subiu devagar, de manhã, sem chuva no local.",
+    "lat": -19.89192,
+    "lon": -43.80595
+  },
+  {
+    "titulo": "Rua Marieta Machado (Centro)",
+    "texto": "Rio Sabará. 24/01/2020, à noite: água dentro de casa, subiu de repente. 09/01/2022, de manhã: água na altura da cintura dentro de casa, subiu devagar e baixou no outro dia (Rio das Velhas represando o Rio Sabará). Sem chuva no local nas duas vezes; o muro caiu.",
+    "lat": -19.89222,
+    "lon": -43.80765
+  }
+]

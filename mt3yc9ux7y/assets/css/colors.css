@@ -1,0 +1,44 @@
+/* Paleta de cores do site Rios de Sabará. Único lugar onde as cores são definidas.
+   Tema: azul do rio, creme e dourado. Claro por padrão; escuro pelo sistema (prefers-color-scheme)
+   ou forçado por <html data-theme="dark">. data-theme="light" força o claro. */
+
+/* ===== Tema claro (padrão) ===== */
+:root{
+  /* Superfícies e texto */
+  --bg:#f7f2e8; --panel:#fffdf8; --fill:#efe7d6; --fg:#0b1c2c; --muted:#5a6470; --line:#e3d9c4; --grid:#ebe3d2;
+  --accent:#1d5fa8;
+  /* Marca */
+  --navy:#0c2640; --goldb:#d4ad55; --gold:#9a7428;
+  /* Fixas, iguais nos dois temas (faixa azul-marinho, cabeçalho "hero") */
+  --cream:#f7f2e8; --navy-hi:#1d4f80; --navy-deep:#143f68; --on-navy:#c9d6e2; --on-navy-soft:#b9c9d8;
+  /* Rios e chuva */
+  --velhas:#1d5fa8; --sabara:#0f8a7e; --chuva:#3b7fd0; --velhas-soft:#dae8f4; --sabara-soft:#d6efed;
+  /* Situação dos rios (aba Agora): normal, subindo, alto, muito alto */
+  --s0:#1f9d6a; --s1:#d99a00; --s2:#e0662f; --s3:#c2364b;
+  /* Gráficos de cada cheia (histórico) */
+  --ev1:#1d5fa8; --ev2:#eb6834; --ev3:#1baf7a; --ev4:#eda100; --sab:#8a97a0; --quota:#c8352b; --mark:#17232b;
+  /* Mapa */
+  --map:#eef1ee; --street:#ffffff; --street-edge:#c4cbcf; --major:#f2d27a; --label:#2c3a43; --hit:#c8352b;
+}
+
+/* ===== Tema escuro ===== */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a1d31; --panel:#0f263d; --fill:#14304c; --fg:#f2ede3; --muted:#a9b8c6; --line:#21405f; --grid:#1a3550;
+    --accent:#7fb2ea; --gold:#d4ad55;
+    --velhas:#6aa6e6; --sabara:#35c2b0; --chuva:#5c9be0; --velhas-soft:#1b3346; --sabara-soft:#14332f;
+    --s0:#2bb07c; --s1:#e0a91a; --s2:#ea7a46; --s3:#e2566a;
+    --ev1:#6aa6e6; --ev2:#d95926; --ev3:#199e70; --ev4:#c98500; --sab:#6f7d86; --quota:#ef6a5f; --mark:#e4ebef;
+    --map:#1a2328; --street:#3a4850; --street-edge:#26323a; --major:#8a7440; --label:#d7e0e5; --hit:#ef6a5f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a1d31; --panel:#0f263d; --fill:#14304c; --fg:#f2ede3; --muted:#a9b8c6; --line:#21405f; --grid:#1a3550;
+  --accent:#7fb2ea; --gold:#d4ad55;
+  --velhas:#6aa6e6; --sabara:#35c2b0; --chuva:#5c9be0; --velhas-soft:#1b3346; --sabara-soft:#14332f;
+  --s0:#2bb07c; --s1:#e0a91a; --s2:#ea7a46; --s3:#e2566a;
+  --ev1:#6aa6e6; --ev2:#d95926; --ev3:#199e70; --ev4:#c98500; --sab:#6f7d86; --quota:#ef6a5f; --mark:#e4ebef;
+  --map:#1a2328; --street:#3a4850; --street-edge:#26323a; --major:#8a7440; --label:#d7e0e5; --hit:#ef6a5f;
+  color-scheme:dark;
+}

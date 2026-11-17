@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Rios de Sabará · Previsão</title>
+  <meta name="description" content="Alertas e previsão oficial do INMET para Sabará e para as cidades da bacia dos rios.">
+
+  <!-- Fontes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&display=swap">
+
+  <!-- Estilos do painel -->
+  <link rel="stylesheet" href="assets/css/colors.css">
+  <link rel="stylesheet" href="assets/css/core.css">
+</head>
+
+<body class="pg-previsao">
+
+  <!-- ===== Cabeçalho e navegação entre as abas ===== -->
+  <script src="assets/includes/header.js"></script>
+
+  <main class="wrap">
+
+    <!-- ===== Estado da conexão / última atualização ===== -->
+    <div class="status">
+      <span class="dot" id="dot"></span>
+      <span id="stxt">Carregando a previsão…</span>
+    </div>
+
+    <!-- ===== Destaque da página ===== -->
+    <section class="hero" style="--c:var(--accent)">
+      <div class="k">Previsão do tempo</div>
+      <h1>Previsão oficial do INMET para Sabará e para as cidades da bacia</h1>
+      <p>Para Sabará e para as cidades por onde passam os rios antes de chegar aqui, com a chuva prevista em milímetros. Previsão é estimativa e erra, principalmente nas tempestades de verão, que são muito localizadas.</p>
+    </section>
+
+    <p class="avisoc" role="note"><b>Não é uma ferramenta oficial.</b> Em caso de risco, siga a Defesa Civil: <b>199</b> · Bombeiros: <b>193</b>.</p>
+
+    <!-- ===== Card da previsão do INMET (cidade escolhida pelos botões) ===== -->
+    <section class="card" aria-labelledby="cidI">
+      <div class="kI">Previsão oficial · INMET</div>
+      <h2 id="cidI">Sabará</h2>
+      <!-- Botões de escolha da cidade (preenchido por main.js) -->
+      <div class="chips" id="chips" role="group" aria-label="Escolha a cidade"></div>
+      <!-- Condição atual e previsão por período (preenchido por main.js) -->
+      <div class="agoraI" id="agoraI"></div>
+      <div class="prevI" id="prevB"></div>
+      <p class="muted" style="font-size:14px;margin:0">Chuva forte em Caeté pesa mais no Rio Sabará. Chuva forte rio acima (Itabirito, Nova Lima, Rio Acima e Raposos) pesa mais no Rio das Velhas.</p>
+    </section>
+
+    <!-- ===== Alerta oficial do INMET ===== -->
+    <section class="oficialP" aria-labelledby="ofT">
+      <div class="k">Fonte oficial · INMET</div>
+      <h2 id="ofT">Alerta do INMET para Sabará</h2>
+      <div id="avisosI">
+        <p class="muted" style="margin:0">Carregando os alertas do INMET…</p>
+      </div>
+      <p class="muted" style="font-size:13px;margin:0">Alertas e previsão do <a href="https://portal.inmet.gov.br/">INMET</a> (Instituto Nacional de Meteorologia), atualizados a cada 30 minutos. Para receber os alertas da Defesa Civil no celular, envie seu CEP por SMS para <b>40199</b>.</p>
+    </section>
+
+    <!-- ===== Explicação sobre a origem da chuva em milímetros (Open-Meteo) ===== -->
+    <p class="fonteP" style="--c:var(--accent)"><b>Chuva em milímetros:</b> o INMET não informa a quantidade de chuva prevista. Por isso, os números abaixo vêm do <a href="https://open-meteo.com/">Open-Meteo</a>, um serviço gratuito que combina vários modelos do tempo. É um complemento: por ser estimativa automática, pode ser diferente da previsão oficial acima.</p>
+
+    <!-- ===== Resumo da chuva prevista por cidade ===== -->
+    <section class="card">
+      <h2>Chuva prevista nas cidades da bacia (mm)</h2>
+      <div class="tbl">
+        <table id="resumo" class="res" style="min-width:0"></table>
+      </div>
+      <p class="muted" style="font-size:13px;margin:6px 0 0">Valores em milímetros, em faixas, porque a previsão não tem precisão de casa decimal.</p>
+      <!-- Sinal de atenção, se houver (preenchido por main.js) -->
+      <div id="sinal"></div>
+    </section>
+
+    <!-- ===== Chuva hora a hora e próximos dias (cidade escolhida) ===== -->
+    <section class="card">
+      <h2>Chuva hora a hora em <span id="cidT">Sabará</span></h2>
+      <p class="muted" style="font-size:13px;margin:0">Para ver outra cidade, escolha no card da previsão do INMET, acima.</p>
+
+      <h3>Hoje</h3>
+      <div class="strip">
+        <div class="hrs" id="hoje"></div>
+      </div>
+
+      <h3>Amanhã</h3>
+      <div class="strip">
+        <div class="hrs" id="amanha"></div>
+      </div>
+
+      <!-- Legenda das barras por hora -->
+      <ul class="leg">
+        <li><i style="opacity:.45"></i>chance de chuva na hora</li>
+        <li><i></i>hora com 1 mm ou mais previsto</li>
+      </ul>
+
+      <h3>Próximos 7 dias</h3>
+      <div class="dias" id="dias"></div>
+    </section>
+
+    <!-- ===== Rodapé: fontes e autoria ===== -->
+    <script src="assets/includes/footer.js"></script>
+  </main>
+
+  <!-- ===== Scripts (a ordem importa: constantes → núcleo → página → tempo real → avisos) ===== -->
+  <script src="assets/js/const.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/rt.js"></script>
+  <script src="assets/js/aviso.js"></script>
+</body>
+
+</html>

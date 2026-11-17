@@ -1,0 +1,58 @@
+[
+  {
+    "data": "16/12/2025",
+    "tipo": "Deslizamento",
+    "texto": "Muro de arrimo cai sobre casa na Rua Zilda Caldeira de Oliveira, 266 (Morro São Francisco). 5 atingidos; morte de um menino de 5 anos.",
+    "lat": -19.89061,
+    "lon": -43.81532
+  },
+  {
+    "data": "23/01/2026",
+    "tipo": "Deslizamento",
+    "texto": "Muro de arrimo desaba no Morro São Francisco, mesmo bairro de dez/2025. Sem feridos.",
+    "lat": -19.8885,
+    "lon": -43.815
+  },
+  {
+    "data": "23/01/2026",
+    "tipo": "Deslizamento",
+    "texto": "Deslizamento em Nossa Senhora de Fátima; família retirada (local aproximado).",
+    "lat": -19.87,
+    "lon": -43.8639
+  },
+  {
+    "data": "08/01/2022",
+    "tipo": "Deslizamento",
+    "texto": "Barranco cai sobre casas no General Carneiro; 3 famílias perdem tudo (local aproximado).",
+    "lat": -19.8844,
+    "lon": -43.8539
+  },
+  {
+    "data": "08/01/2022",
+    "tipo": "Deslizamento",
+    "texto": "Rua cede na Vila Rica (local aproximado).",
+    "lat": -19.8891,
+    "lon": -43.8498
+  },
+  {
+    "data": "27/12/2024",
+    "tipo": "Deslizamento",
+    "texto": "Muro de 10 m cai sobre casa na Vila São José; 2 famílias desalojadas (local aproximado).",
+    "lat": -19.8792,
+    "lon": -43.849
+  },
+  {
+    "data": "27/12/2013",
+    "tipo": "Deslizamento",
+    "texto": "Risco de deslizamento na Rua Juriti (Adelmolândia): família de 8 pessoas retirada (local aproximado).",
+    "lat": -19.9057,
+    "lon": -43.8126
+  },
+  {
+    "data": "09/03/2026",
+    "tipo": "Enxurrada",
+    "texto": "Jovem de 24 anos arrastado para a galeria pluvial do General Carneiro (Itacolomi); UBS alagada (local aproximado).",
+    "lat": -19.878,
+    "lon": -43.8523
+  }
+]
